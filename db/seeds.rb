@@ -29,6 +29,7 @@ grog = Product.create!(
   description_1: 'Rhum de martinique',
   description_2: 'Miel fait par des abeilles',
   description_3: 'Citron made in france',
+  price_cents: 2000.00,
 )
 
 grog.save!

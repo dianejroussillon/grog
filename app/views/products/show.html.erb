@@ -95,5 +95,9 @@
   <%= @product.sub_description %>
 </p>
 
+<p>
+  <p>Montant: <%= humanized_money_with_symbol(@product.price) %></p>
+</p>
+
 <%= link_to 'Back', products_path %> |
 <%= link_to 'Bye', new_order_path %>
