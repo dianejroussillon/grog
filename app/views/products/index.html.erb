@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ingredient 1</th>
+      <th>Ingredient 2</th>
+      <th>Ingredient 3</th>
+      <th>Ingredient 4</th>
+      <th>Quantity 1</th>
+      <th>Quantity 2</th>
+      <th>Quantity 3</th>
+      <th>Quantity 4</th>
+      <th>Content 1</th>
+      <th>Content 2</th>
+      <th>Content 3</th>
+      <th>Content 4</th>
+      <th>Description 1</th>
+      <th>Description 2</th>
+      <th>Description 3</th>
+      <th>Description 4</th>
+      <th>Quantity asked</th>
+      <th>Sub description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.ingredient_1 %></td>
+        <td><%= product.ingredient_2 %></td>
+        <td><%= product.ingredient_3 %></td>
+        <td><%= product.ingredient_4 %></td>
+        <td><%= product.quantity_1 %></td>
+        <td><%= product.quantity_2 %></td>
+        <td><%= product.quantity_3 %></td>
+        <td><%= product.quantity_4 %></td>
+        <td><%= product.content_1 %></td>
+        <td><%= product.content_2 %></td>
+        <td><%= product.content_3 %></td>
+        <td><%= product.content_4 %></td>
+        <td><%= product.description_1 %></td>
+        <td><%= product.description_2 %></td>
+        <td><%= product.description_3 %></td>
+        <td><%= product.description_4 %></td>
+        <td><%= product.quantity_asked %></td>
+        <td><%= product.sub_description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Order', new_order_path %>
