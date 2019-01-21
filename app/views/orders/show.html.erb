@@ -1,44 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @order.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @order.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @order.phone_number %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<p>
-  <strong>Code postal:</strong>
-  <%= @order.code_postal %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @order.city %>
-</p>
-
-<p>
-  <strong>Product:</strong>
-  <%= @order.product %>
-</p>
+<h1>Order</h1>
+<ul>
+  <li>Status: <%= @order.status %></li>
+  <li>Item: <%= @order.product_id %></li>
+  <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
+<ul>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

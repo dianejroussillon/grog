@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
   end
 
   # GET /orders/new
@@ -26,15 +27,20 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @order.save
+    #     format.html { redirect_to @order, notice: 'Order was successfully created.' }
+    #     format.json { render :show, status: :created, location: @order }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @order.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+    product = Product.find(order_params[:product_id])
+    order = Order.create!(product_id: order_params[:product_id], amount: product.price, status: 'pending')
+
+    redirect_to new_order_payment_path(order)
   end
 
   # PATCH/PUT /orders/1
@@ -69,6 +75,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:first_name, :last_name, :email, :phone_number, :address, :code_postal, :city, :product_id)
+      params.require(:order).permit(:first_name, :last_name, :email, :phone_number, :address, :code_postal, :city, :product_id, :status, :amount_cents, :payment)
     end
 end
