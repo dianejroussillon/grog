@@ -1,0 +1,75 @@
+.home {
+  opacity: 0.4;
+}
+
+#AVtextTop {
+  width: 300px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -25px;
+  text-align: center !important;
+  font-size: 24px !important;
+  font-family: Copperplate !important;
+  line-height: 20px !important;
+  text-decoration: none !important;
+  letter-spacing: 1px !important;
+  color: black;
+  background-color: transparent !important;
+  z-index: 100003000; border: 0px;
+  outline: none;
+  padding: 0px;
+}
+
+#avLink {
+  position: fixed;
+  cursor: pointer;
+  left: 50%;
+  margin-left: 10px;
+  top: 50%;
+  margin-top: 40px;
+  height: 42px !important;
+  width: 140px !important;
+  color: black !important;
+  font-size: 20px !important;
+  padding: 0px !important;
+  font-family: Copperplate !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  letter-spacing: 1px !important;
+  border-color: rgb(39, 112, 145) !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-transform: none !important;
+  -webkit-appearance: none !important;
+  z-index: 100003000;
+}
+
+#AVenterLink {
+  position: fixed;
+  cursor: pointer;
+  left: 50%;
+  margin-left: -150px;
+  top: 50%;
+  margin-top: 40px;
+  height: 42px !important;
+  width: 140px !important;
+  color: black !important;
+  font-size: 20px !important;
+  padding: 0px !important;
+  font-family: Copperplate !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  letter-spacing: 1px !important;
+  border-color: rgb(39, 112, 145) !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-transform: none !important;
+  -webkit-appearance: none !important;
+  z-index: 100003000;
+}

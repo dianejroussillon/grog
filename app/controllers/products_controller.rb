@@ -41,13 +41,9 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+      @product.update(product_params)
+      format.html { redirect_to new_order_path(@product), notice: 'Product was successfully updated.' }
+      format.json { redirect_to new_order_path(@product), location: @product }
     end
   end
 
@@ -70,6 +66,6 @@ class ProductsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
-    params.require(:product).permit(:name, :ingredient_1, :ingredient_2, :ingredient_3, :ingredient_4, :quantity_1, :quantity_2, :quantity_3, :quantity_4, :content_1, :content_2, :content_3, :content_4, :description_1, :description_2, :description_3, :description_4, :quantity_asked, :sub_description, :price_cents)
+    params.require(:product).permit(:name, :ingredient_1, :ingredient_2, :ingredient_3, :ingredient_4, :quantity_1, :quantity_2, :quantity_3, :quantity_4, :content_1, :content_2, :content_3, :content_4, :description_1, :description_2, :description_3, :description_4, :quantity_asked, :sub_description, :price_cents, :quantity)
   end
 end
