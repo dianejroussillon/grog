@@ -2,6 +2,17 @@
   opacity: 0.4;
 }
 
+.home-validate {
+  opacity: 1;
+}
+
+.hide_AV {
+  display: none;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
 #AVtextTop {
   width: 300px;
   position: fixed;
