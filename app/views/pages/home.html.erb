@@ -9,12 +9,11 @@
 <script>
   validation = document.getElementById("AV");
   background_home = document.getElementById("home");
-  $('#AVenterLink').click(function() {
-    console.log(background_home);
-    $(validation).removeClass('show_AV');
-    $(validation).addClass('hide_AV');
-    $(background_home).removeClass('home');
-    $(background_home).addClass('home-validate');
-
+  $('#AVenterLink').click(function(event) {
+    event.preventDefault();
+      $(validation).removeClass('show_AV');
+      $(validation).addClass('hide_AV');
+      $(background_home).removeClass('home');
+      $(background_home).addClass('home-validate');
   });
 </script>
