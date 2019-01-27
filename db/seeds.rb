@@ -5,9 +5,10 @@ puts 'Creating the Grog'
 grog = Product.create!(
   name: 'Grog',
   sub_description: 'Le meilleur Grog au monde',
-  ingredient_1: 'Rhum',
-  ingredient_2: 'Miel',
-  ingredient_3: 'Citron',
+  ingredient_1: 'Rhum Ambré',
+  ingredient_2: 'Miel bio du Morvan',
+  ingredient_3: 'Jus de citron frai Bio',
+  ingredient_4: 'Mug trop stylé',
   quantity_1: 1,
   quantity_2: 2,
   quantity_3: 3,
@@ -16,7 +17,7 @@ grog = Product.create!(
   description_1: 'Rhum de martinique',
   description_2: 'Miel fait par des abeilles',
   description_3: 'Citron made in france',
-  price_cents: 2000.00,
+  price_cents: 4000.00,
   quantity: 1000
 )
 

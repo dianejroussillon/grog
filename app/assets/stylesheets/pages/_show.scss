@@ -1,0 +1,62 @@
+.content-show-top {
+  width: 100%;
+  height: 15vh;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 30px 10px 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content-show-top-left {
+  width: 100vh;
+  display: flex;
+  align-items: flex-start;
+}
+
+.content-show-top-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  line-height: 40%;
+}
+
+#asterisque {
+  font-size: 14px;
+}
+
+.content-show-middle {
+  padding: 25px 40px 25px 40px;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-show-middle-left {
+  width: 40%;
+  height: 100%;
+  background-image: url("mug-show.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+
+.content-show-middle-center {
+  width: 30%;
+  height: 100%;
+  padding: 35px;
+  line-height: 70%;
+}
+
+.content-show-middle-right {
+  width: 30%;
+  height: 100%;
+  background-image: url("pack-grog.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}

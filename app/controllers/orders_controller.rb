@@ -26,9 +26,8 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @product = Product.find(order_params[:product_id])
-    amount_order = @product.price.to_i * @product.quantity_asked.to_i
-    @order = Order.create!(product_id: order_params[:product_id], amount: amount_order, status: 'pending', first_name: order_params[:first_name], last_name: order_params[:last_name], email: order_params[:email], phone_number: order_params[:phone_number], address: order_params[:address], code_postal: order_params[:code_postal], city: order_params[:city])
-
+    amount_order = @product.price.to_i * order_params[:quantity].to_i
+    @order = Order.create!(product_id: order_params[:product_id], amount: amount_order, status: 'pending', first_name: order_params[:first_name], last_name: order_params[:last_name], email: order_params[:email], phone_number: order_params[:phone_number], address: order_params[:address], code_postal: order_params[:code_postal], city: order_params[:city], quantity: order_params[:quantity])
     respond_to do |format|
       @order.save
       format.html { redirect_to new_order_payment_path(@order) }
@@ -64,6 +63,6 @@ class OrdersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_params
-    params.require(:order).permit(:first_name, :last_name, :email, :phone_number, :address, :code_postal, :city, :product_id, :status, :amount_cents, :payment)
+    params.require(:order).permit(:first_name, :last_name, :email, :phone_number, :address, :code_postal, :city, :product_id, :status, :amount_cents, :payment, :quantity)
   end
 end
