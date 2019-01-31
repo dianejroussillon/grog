@@ -1,39 +1,64 @@
-<div class="content-show-top">
-  <div class="content-show-top-left">
-    <p><span style="background-color: yellow;">"la meilleure boisson chaude alcoolisée" <sup class="emoji-up">🥶</sup></span></p>
+<%= render 'pages/agevalidation' %>
+
+<div class="home" id="home">
+  <div class="barre">
+    <div class="barre-left">
+      <a href="/">Le grog</a>
+    </div>
+    <div class="barre-right">
+      <p><span style="background-color: yellow;">Combat <del>le rhum</del><sup  class="emoji-up">🥴</sup> et la grippe <sup class="emoji-up">🤧🙏 </sup><%=     %></span></p>
+      <p class="sub-text"><span style="background-color: yellow;">le rhume</span></p>
+    </div>
   </div>
-  <div class="content-show-top-right">
-    <p>Commander votre pack composé des meilleurs produits *</p>
-    <p id="asterisque">*Recette de grand mère du Morvan non breveté, mais on devrait.</p>
+  <div class="content-show-top">
+    <div class="content-show-top-left">
+      <p><span style="background-color: yellow;">"la meilleure boisson chaude alcoolisée" <sup class="emoji-up">🥶</sup></span></p>
+    </div>
+    <div class="content-show-top-right">
+      <p>Commander votre pack composé des meilleurs produits *</p>
+      <p id="asterisque">*Recette de grand mère du Morvan non breveté, mais on devrait.</p>
+    </div>
   </div>
-</div>
-<div class="content-show-middle">
-  <div class="content-show-middle-left"></div>
-  <div class="content-show-middle-center">
-    <p>🍹 <%= @product.ingredient_1 %> <%= @product.quantity_1 %> L</p>
-    <p>🐝 <%= @product.ingredient_2 %></p>
-    <p>🍋 <%= @product.ingredient_3 %></p>
-    <p>😍 Mug trop stylé</p>
-    <br>
-    <p>⚗️ Recette et dosage</p>
-    <br>
-    <p>💰 <%= humanized_money_with_symbol(@product.price) %> par pack</p>
-    <br>
-    <p>📦 Livraison partout en Europe</p>
-    <form class="simple_form edit_product" id="edit_product_1" novalidate="novalidate" action="/products/1" accept-charset="UTF-8" method="post">
-      <input name="utf8" type="hidden" value="&#x2713;" />
-      <input type="hidden" name="_method" value="patch" />
-      <input type="hidden" name="authenticity_token" value="PbIaYYVRiM5XlLmzuTNC04+B8isgejrCi2aOgQubAribJdNF9JNqTWbvVwFOf5n41n9piH45Lp7e3M4AeOdZkg==" />
-      <div class="form-inputs">
-        <div class="form-group integer optional product_quantity_asked hidden">
-          <label class="form-control-label integer optional" for="product_quantity_asked">Quantity asked</label>
-          <input class="form-control numeric integer optional" type="number" step="1" name="product[quantity_asked]" id="product_quantity_asked" value="1" max='<%= @product.quantity %>' />
+  <div class="content-show-middle">
+    <div class="content-show-middle-left"></div>
+    <div class="content-show-middle-center">
+      <p>🍹 <%= @product.ingredient_1 %> <%= @product.quantity_1 %> L</p>
+      <p>🐝 <%= @product.ingredient_2 %></p>
+      <p>🍋 <%= @product.ingredient_3 %></p>
+      <p>😍 Mug trop stylé</p>
+      <br>
+      <p>⚗️ Recette et dosage</p>
+      <br>
+      <p>💰 <%= humanized_money_with_symbol(@product.price) %> par pack</p>
+      <br>
+      <p>📦 Livraison partout en Europe</p>
+      <form class="simple_form edit_product" id="edit_product_1" novalidate="novalidate" action="/products/1" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="_method" value="patch" />
+        <input type="hidden" name="authenticity_token" value="PbIaYYVRiM5XlLmzuTNC04+B8isgejrCi2aOgQubAribJdNF9JNqTWbvVwFOf5n41n9piH45Lp7e3M4AeOdZkg==" />
+        <div class="form-inputs">
+          <div class="form-group integer optional product_quantity_asked hidden">
+            <label class="form-control-label integer optional" for="product_quantity_asked">Quantity asked</label>
+            <input class="form-control numeric integer optional" type="number" step="1" name="product[quantity_asked]" id="product_quantity_asked" value="1" max='<%= @product.quantity %>' />
+          </div>
         </div>
-      </div>
-      <div class="form-actions">
-        <input type="submit" name="commit" value="Bye" class="btn" data-disable-with="Update Product" />
-      </div>
-    </form>
+        <div class="form-actions">
+          <input type="submit" name="commit" value="Bye" class="btn" data-disable-with="Update Product" />
+        </div>
+      </form>
+    </div>
+    <div class="content-show-middle-right"></div>
   </div>
-  <div class="content-show-middle-right"></div>
 </div>
+
+<script>
+  validation = document.getElementById("AV");
+  background_home = document.getElementById("home");
+  $('#AVenterLink').click(function(event) {
+    event.preventDefault();
+      $(validation).removeClass('show_AV');
+      $(validation).addClass('hide_AV');
+      $(background_home).removeClass('home');
+      $(background_home).addClass('home-validate');
+  });
+</script>

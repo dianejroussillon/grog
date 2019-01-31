@@ -1,19 +1,1 @@
-<%= render 'agevalidation' %>
 
-<div class="home" id="home">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <%= link_to 'ORDER', product_path(:id => 1) %>
-</div>
-
-<script>
-  validation = document.getElementById("AV");
-  background_home = document.getElementById("home");
-  $('#AVenterLink').click(function(event) {
-    event.preventDefault();
-      $(validation).removeClass('show_AV');
-      $(validation).addClass('hide_AV');
-      $(background_home).removeClass('home');
-      $(background_home).addClass('home-validate');
-  });
-</script>
