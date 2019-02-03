@@ -1,16 +1,38 @@
+body {
+  color: white;
+  // overflow-y: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .content-show-top {
   width: 100%;
-  height: 15vh;
-  // display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 30px 10px 30px;
-  font-weight: bold;
+  height: auto;
+  text-align: center;
+  padding: 20vh 0 20vh 20vh;
+  font-weight: light;
   font-size: 20px;
 }
 
+.image-show-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75vh;
+  height: 100vh;
+  background-image: url("mugnew2.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .content-show-top-left {
-  width: 100vh;
+  width: 100%;
   display: flex;
   align-items: flex-start;
 }
@@ -30,7 +52,7 @@
 
 .content-show-middle {
   padding: 25px 40px 25px 40px;
-  height: 70vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,4 +81,27 @@
   // background-repeat: no-repeat;
   // background-size: cover;
   padding: 20px;
+}
+
+.big-title-group {
+  line-height: 290%;
+}
+
+.small-title-group {
+  line-height: 1.5;
+  p {
+    margin: 0;
+  }
+}
+
+#big-title {
+  font-weight: normal;
+  font-size: 54px;
+  p {
+    margin: 0;
+  }
+}
+
+#bellow-title {
+  margin-top: 25px;
 }
