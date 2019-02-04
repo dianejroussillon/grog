@@ -1,6 +1,5 @@
 body {
   color: white;
-  // overflow-y: hidden;
 }
 
 .banner {
@@ -104,4 +103,35 @@ body {
 
 #bellow-title {
   margin-top: 25px;
+}
+
+#button-1 {
+  position: absolute;
+  top: 80vh;
+  left: 50vh;
+  background-color: rgba(253, 211, 55, 0.8);
+  color: rgba(21, 21, 23, 1);
+  // color: white;
+  padding: 12px 34px;
+  border-radius: 50px;
+  font-weight: bold;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+#button-1:hover {
+  opacity: 1;
+}
+
+
+#button-2 {
+  background-color: rgb(253, 211, 55);
+  color: rgba(21, 21, 23, 1);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+#button-2:hover {
+  opacity: 1;
 }
